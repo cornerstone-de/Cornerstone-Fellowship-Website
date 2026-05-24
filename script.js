@@ -95,7 +95,7 @@ if (sendWhatsApp) {
     if (!data) return;
 
     const whatsappURL =
-`https://wa.me/14847446219?text=${encodeURIComponent(data.text)}`;
+`https://wa.me/13024649198?text=${encodeURIComponent(data.text)}`;
 
     window.open(whatsappURL, "_blank");
   });
@@ -108,7 +108,7 @@ if (sendSMS) {
     if (!data) return;
 
     const smsURL =
-`sms:+14847446219?body=${encodeURIComponent(data.text)}`;
+`sms:+13024649198?body=${encodeURIComponent(data.text)}`;
 
     window.location.href = smsURL;
   });
