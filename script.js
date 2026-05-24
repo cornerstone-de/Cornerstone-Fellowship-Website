@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const sendSMS = document.getElementById("sendSMS");
+  const sendEmail = document.getElementById("sendEmail");
 
 function getFormData() {
 
@@ -116,6 +117,25 @@ if (sendSMS) {
 `sms:+13024649198?body=${encodeURIComponent(data.text)}`;
 
     window.location.href = smsURL;
+  });
+}
+
+if (sendEmail) {
+  sendEmail.addEventListener("click", () => {
+
+    const data = getFormData();
+    if (!data) return;
+
+    const subject =
+      encodeURIComponent("New Contact Request - Cornerstone Fellowship");
+
+    const body =
+      encodeURIComponent(data.text);
+
+    const emailURL =
+`mailto:cornerstone.delaware@gmail.com?subject=${subject}&body=${body}`;
+
+    window.location.href = emailURL;
   });
 }
   
