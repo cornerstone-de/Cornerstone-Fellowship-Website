@@ -346,9 +346,10 @@ html, body {
   transform: scale(1.05);
 }
 
-.chat-button img {
-  width: 34px;
-  height: 34px;
+.chat-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 .chat-popup {
