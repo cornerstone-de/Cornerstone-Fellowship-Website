@@ -38,23 +38,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // WhatsApp Chat Widget
 
-const chatToggle = document.getElementById("chatToggle");
-const chatPopup = document.getElementById("chatPopup");
-const sendWhatsApp = document.getElementById("sendWhatsApp");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (chatToggle) {
-  chatToggle.addEventListener("click", () => {
-    chatPopup.classList.toggle("active");
-  });
-}
+  const chatToggle = document.getElementById("chatToggle");
+  const chatPopup = document.getElementById("chatPopup");
+  const closeChat = document.getElementById("closeChat");
+  const sendWhatsApp = document.getElementById("sendWhatsApp");
 
-if (sendWhatsApp) {
-  sendWhatsApp.addEventListener("click", () => {
-    const name = document.getElementById("waName").value;
-    const contact = document.getElementById("waContact").value;
-    const message = document.getElementById("waMessage").value;
+  if (chatToggle) {
+    chatToggle.addEventListener("click", () => {
+      chatPopup.classList.toggle("active");
+    });
+  }
 
-    const text =
+  if (closeChat) {
+    closeChat.addEventListener("click", () => {
+      chatPopup.classList.remove("active");
+    });
+  }
+
+  if (sendWhatsApp) {
+    sendWhatsApp.addEventListener("click", () => {
+
+      const name =
+        document.getElementById("waName").value.trim();
+
+      const contact =
+        document.getElementById("waContact").value.trim();
+
+      const message =
+        document.getElementById("waMessage").value.trim();
+
+      if (!name || !contact || !message) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      const text =
 `New Contact Request - Cornerstone Fellowship
 
 Name: ${name}
@@ -64,12 +84,14 @@ Contact: ${contact}
 Question:
 ${message}`;
 
-    const url =
+      const whatsappURL =
 `https://wa.me/14847446219?text=${encodeURIComponent(text)}`;
 
-    window.open(url, "_blank");
-  });
-}
+      window.open(whatsappURL, "_blank");
+    });
+  }
+
+});
 
 
 
