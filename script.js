@@ -85,7 +85,7 @@ Question:
 ${message}`;
 
       const whatsappURL =
-`https://wa.me/14847446219?text=${encodeURIComponent(text)}`;
+`https://wa.me/13024649198?text=${encodeURIComponent(text)}`;
 
       window.open(whatsappURL, "_blank");
     });
