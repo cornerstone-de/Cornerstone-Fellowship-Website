@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 Name: ${name}
 
-Contact: ${contact}
+Phone: ${contact}
 
 Question:
 ${message}`;
