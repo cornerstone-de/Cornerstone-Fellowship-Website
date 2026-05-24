@@ -322,69 +322,124 @@ html, body {
 
 .whatsapp-chat {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 24px;
+  right: 24px;
   z-index: 9999;
 }
 
 .chat-button {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   border: none;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  font-size: 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+  transition: transform 0.2s ease;
+}
+
+.chat-button:hover {
+  transform: scale(1.05);
+}
+
+.chat-button img {
+  width: 34px;
+  height: 34px;
 }
 
 .chat-popup {
-  display: none;
-  flex-direction: column;
-  gap: 12px;
   position: absolute;
-  bottom: 75px;
+  bottom: 82px;
   right: 0;
-  width: 300px;
-  padding: 20px;
-  border-radius: 12px;
+  width: 320px;
   background: white;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s;
 }
 
-.chat-popup h3 {
+.chat-popup.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.chat-header h3 {
   margin: 0;
+}
+
+#closeChat {
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.chat-subtext {
+  font-size: 14px;
+  margin-bottom: 16px;
+  opacity: 0.8;
 }
 
 .chat-popup input,
 .chat-popup textarea {
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-family: inherit;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
   box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
 }
 
 .chat-popup textarea {
-  min-height: 100px;
+  min-height: 110px;
   resize: vertical;
 }
 
-.chat-popup button {
+.send-button {
+  width: 100%;
   border: none;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
+  padding: 14px;
+  border-radius: 10px;
+  background: #25D366;
+  color: white;
   font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
-.chat-popup.active {
-  display: flex;
+.send-button:hover {
+  opacity: 0.9;
 }
 
 @media (max-width: 500px) {
+  .whatsapp-chat {
+    right: 16px;
+    bottom: 16px;
+  }
+
   .chat-popup {
-    width: 260px;
+    width: 280px;
   }
 }
-
