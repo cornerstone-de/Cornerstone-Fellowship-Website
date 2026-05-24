@@ -460,3 +460,7 @@ html, body {
 .sms-btn {
   background: var(--accent);
 }
+
+.email-btn {
+  background: #c69a3a;
+}
