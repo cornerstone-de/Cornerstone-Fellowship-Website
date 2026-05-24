@@ -120,22 +120,24 @@ if (sendSMS) {
   });
 }
 
+// Email
+
 if (sendEmail) {
   sendEmail.addEventListener("click", () => {
 
     const data = getFormData();
     if (!data) return;
 
-    const subject =
-      encodeURIComponent("New Contact Request - Cornerstone Fellowship");
+    const subject = encodeURIComponent(
+      "New Contact Request - Cornerstone Fellowship"
+    );
 
-    const body =
-      encodeURIComponent(data.text);
+    const body = encodeURIComponent(data.text);
 
-    const emailURL =
-`mailto:cornerstone.delaware@gmail.com?subject=${subject}&body=${body}`;
-
-    window.location.href = emailURL;
+    window.open(
+      `mailto:cornerstone.delaware@gmail.com?subject=${subject}&body=${body}`,
+      "_self"
+    );
   });
 }
   
