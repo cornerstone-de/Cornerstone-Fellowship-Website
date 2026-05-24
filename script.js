@@ -36,7 +36,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// WhatsApp Chat Widget
 
+const chatToggle = document.getElementById("chatToggle");
+const chatPopup = document.getElementById("chatPopup");
+const sendWhatsApp = document.getElementById("sendWhatsApp");
+
+if (chatToggle) {
+  chatToggle.addEventListener("click", () => {
+    chatPopup.classList.toggle("active");
+  });
+}
+
+if (sendWhatsApp) {
+  sendWhatsApp.addEventListener("click", () => {
+    const name = document.getElementById("waName").value;
+    const contact = document.getElementById("waContact").value;
+    const message = document.getElementById("waMessage").value;
+
+    const text =
+`New Contact Request - Cornerstone Fellowship
+
+Name: ${name}
+
+Contact: ${contact}
+
+Question:
+${message}`;
+
+    const url =
+`https://wa.me/14847446219?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank");
+  });
+}
 
 
 
