@@ -318,5 +318,73 @@ html, body {
   overflow-x: hidden !important;
 }
 
+/* WhatsApp Widget */
 
+.whatsapp-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.chat-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.chat-popup {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  position: absolute;
+  bottom: 75px;
+  right: 0;
+  width: 300px;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.chat-popup h3 {
+  margin: 0;
+}
+
+.chat-popup input,
+.chat-popup textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.chat-popup textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.chat-popup button {
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.chat-popup.active {
+  display: flex;
+}
+
+@media (max-width: 500px) {
+  .chat-popup {
+    width: 260px;
+  }
+}
 
