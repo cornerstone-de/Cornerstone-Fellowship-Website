@@ -445,3 +445,17 @@ html, body {
     width: 280px;
   }
 }
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+}
+
+.sms-btn {
+  background: var(--accent);
+}
