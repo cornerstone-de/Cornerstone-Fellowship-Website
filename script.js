@@ -62,30 +62,35 @@ document.addEventListener("DOMContentLoaded", () => {
 function getFormData() {
 
   const name =
-    document.getElementById("waName").value.trim();
+  document.getElementById("waName").value.trim();
 
-  const contact =
-    document.getElementById("waContact").value.trim();
+const phone =
+  document.getElementById("waPhone").value.trim();
 
-  const message =
-    document.getElementById("waMessage").value.trim();
+const email =
+  document.getElementById("waEmail").value.trim();
 
-  if (!name || !contact || !message) {
+const message =
+  document.getElementById("waMessage").value.trim();
+
+  if (!name || !phone || !email || !message) {
     alert("Please fill out all fields.");
     return null;
   }
 
   return {
-    text:
+  text:
 `New Contact Request - Cornerstone Fellowship
 
 Name: ${name}
 
-Phone: ${contact}
+Phone: ${phone}
+
+Email: ${email}
 
 Question:
 ${message}`
-  };
+};
 }
 
 if (sendWhatsApp) {
