@@ -57,24 +57,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (sendWhatsApp) {
-    sendWhatsApp.addEventListener("click", () => {
+  const sendSMS = document.getElementById("sendSMS");
 
-      const name =
-        document.getElementById("waName").value.trim();
+function getFormData() {
 
-      const contact =
-        document.getElementById("waContact").value.trim();
+  const name =
+    document.getElementById("waName").value.trim();
 
-      const message =
-        document.getElementById("waMessage").value.trim();
+  const contact =
+    document.getElementById("waContact").value.trim();
 
-      if (!name || !contact || !message) {
-        alert("Please fill out all fields.");
-        return;
-      }
+  const message =
+    document.getElementById("waMessage").value.trim();
 
-      const text =
+  if (!name || !contact || !message) {
+    alert("Please fill out all fields.");
+    return null;
+  }
+
+  return {
+    text:
 `New Contact Request - Cornerstone Fellowship
 
 Name: ${name}
@@ -82,15 +84,36 @@ Name: ${name}
 Phone: ${contact}
 
 Question:
-${message}`;
+${message}`
+  };
+}
 
-      const whatsappURL =
-`https://wa.me/13024649198?text=${encodeURIComponent(text)}`;
+if (sendWhatsApp) {
+  sendWhatsApp.addEventListener("click", () => {
 
-      window.open(whatsappURL, "_blank");
-    });
-  }
+    const data = getFormData();
+    if (!data) return;
 
+    const whatsappURL =
+`https://wa.me/14847446219?text=${encodeURIComponent(data.text)}`;
+
+    window.open(whatsappURL, "_blank");
+  });
+}
+
+if (sendSMS) {
+  sendSMS.addEventListener("click", () => {
+
+    const data = getFormData();
+    if (!data) return;
+
+    const smsURL =
+`sms:+14847446219?body=${encodeURIComponent(data.text)}`;
+
+    window.location.href = smsURL;
+  });
+}
+  
 });
 
 
