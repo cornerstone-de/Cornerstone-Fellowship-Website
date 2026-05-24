@@ -108,9 +108,9 @@ if (sendSMS) {
     if (!data) return;
 
     const smsURL =
-`sms:14847446219?&body=${encodeURIComponent(data.text)}`;
+`sms:+14847446219?body=${encodeURIComponent(data.text)}`;
 
-    window.open(smsURL);
+    window.location.href = smsURL;
   });
 }
   
