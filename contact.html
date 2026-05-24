@@ -176,14 +176,24 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-<!-- WhatsApp Floating Button -->
+<!-- WhatsApp Chat Widget -->
 <div class="whatsapp-chat">
   <button id="chatToggle" class="chat-button">
-    💬
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+    />
   </button>
 
   <div id="chatPopup" class="chat-popup">
-    <h3>Contact Us</h3>
+    <div class="chat-header">
+      <h3>Contact Us</h3>
+      <button id="closeChat">&times;</button>
+    </div>
+
+    <p class="chat-subtext">
+      Leave your information and we’ll reach out to you.
+    </p>
 
     <input
       type="text"
@@ -202,11 +212,11 @@
       placeholder="How can we help?"
     ></textarea>
 
-    <button id="sendWhatsApp">
+    <button id="sendWhatsApp" class="send-button">
       Send via WhatsApp
     </button>
   </div>
 </div>
-
+  
 </body>
 </html>
