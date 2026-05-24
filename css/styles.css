@@ -325,6 +325,7 @@ html, body {
   bottom: 24px;
   right: 24px;
   z-index: 9999;
+  overflow: visible;
 }
 
 .chat-button {
@@ -355,6 +356,7 @@ html, body {
   bottom: 82px;
   right: 0;
   width: 320px;
+  z-index: 10000;
   background: white;
   border-radius: 18px;
   padding: 20px;
