@@ -126,6 +126,68 @@
     </div>
   </footer>
 
+  <!-- WhatsApp Chat Widget -->
+<div class="whatsapp-chat">
+  <button id="chatToggle" class="chat-button">
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png"
+    alt="Contact"
+    class="chat-icon"
+  />
+</button>
+
+  <div id="chatPopup" class="chat-popup">
+    <div class="chat-header">
+      <h3>Contact Us</h3>
+      <button id="closeChat">&times;</button>
+    </div>
+
+    <p class="chat-subtext">
+      Leave your information and we’ll reach out to you.
+    </p>
+
+    <input
+      type="text"
+      id="waName"
+      placeholder="Your Name"
+    />
+
+    <input
+  type="tel"
+  id="waPhone"
+  placeholder="Phone Number"
+/>
+
+<input
+  type="email"
+  id="waEmail"
+  placeholder="Email Address"
+/>
+    
+    <textarea
+      id="waMessage"
+      placeholder="How can we help?"
+    ></textarea>
+
+    <div class="contact-buttons">
+
+  <button id="sendWhatsApp" class="send-button whatsapp-btn">
+    Contact via WhatsApp
+  </button>
+
+  <button id="sendSMS" class="send-button sms-btn">
+    Contact via SMS
+  </button>
+
+  <button id="sendEmail" class="send-button email-btn">
+    Contact via Email
+  </button>
+
+</div>
+    
+  </div>
+</div>
+
   <script src="script.js"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
