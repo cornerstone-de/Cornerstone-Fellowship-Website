@@ -175,5 +175,38 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-chat">
+  <button id="chatToggle" class="chat-button">
+    💬
+  </button>
+
+  <div id="chatPopup" class="chat-popup">
+    <h3>Contact Us</h3>
+
+    <input
+      type="text"
+      id="waName"
+      placeholder="Your Name"
+    />
+
+    <input
+      type="text"
+      id="waContact"
+      placeholder="Email or Phone"
+    />
+
+    <textarea
+      id="waMessage"
+      placeholder="How can we help?"
+    ></textarea>
+
+    <button id="sendWhatsApp">
+      Send via WhatsApp
+    </button>
+  </div>
+</div>
+
 </body>
 </html>
